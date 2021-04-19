@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Cab App - Booking</title>
+<style>
+	h1 {
+	color: #008CBA;
+	text-align: center;
+}
+form {
+	border: 5px solid #008CBA;
+	padding: 10px;
+	margin: auto;
+	margin-top: 10%;
+	width: 350px;
+}
+
+input {
+  width: 100%;
+  padding: 5px 12px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 2px solid #008CBA;
+  border-color:#008CBA;
+  border-bottom: 2px solid #008CBA;
+}
+
+button {
+	border: none;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	background-color: white;
+	color: black;
+	border: 2px solid #008CBA;
+}
+
+button:hover {
+	background-color: #008CBA;
+	color: white;
+}
+
+
+
+</style>
+</head>
+<body>
+	<form action="peakhours.html">
+		<h1>Booking</h1>
+		<label for="cabs">Choose a Cab type:</label> <select name="cabs"
+			id="cabs">
+			<option value="micro">micro</option>
+			<option value="mini">mini</option>
+			<option value="prime">prime</option>
+		</select>
+		 <br> <br> 
+		 <label for="Jdate">Journey Date:</label>
+		<input type="date" id="Jdate" name="Jdate" required>
+		  <br> <br>
+		   <label for="time">Pick Up time:</label>
+  <input type="time" id="time" name="time" required><br><br>
+		<div style="text-align: center">
+			<button>Submit</button>
+		</div>
+	</form>
+</body>
+</html>
