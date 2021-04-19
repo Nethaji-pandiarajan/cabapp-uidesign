@@ -6,11 +6,21 @@
 </head>
 <style>
 form {
-	border: 5px solid #008CBA ;
+	border: 5px solid #008CBA;
 	padding: 10px;
 	margin: auto;
 	margin-top: 10%;
-	width: 400px;
+	width: 350px;
+}
+
+input {
+  width: 100%;
+  padding: 5px 12px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 2px solid #008CBA;
+  border-color:#008CBA;
+  border-bottom: 2px solid #008CBA;
 }
 
 button {
@@ -32,18 +42,23 @@ button:hover {
 	background-color: #008CBA;
 	color: white;
 }
- h1 { color : #008CBA;
-	text-align: center;
 
+h1 {
+	color: #008CBA;
+	text-align: center;
+}
 </style>
 <body>
-	<form>
+	<form action="cabtypes.html">
 		<h1>Login</h1>
-		<br> <label for="mno"> Mobile Number: </label> <input type="text"
-			id="mno" name="mno" required> <br> <br> <label
-			for="password"> Password: </label> <input type="password"
-			id="password" name="password" required> <br> <br>
+		<br> 
+		<label for="mno"> Mobile Number: </label>
+ 		<input type="text"	id="mno" name="mno" required> <br> <br>
+ 		 <label for="password"> Password: </label> 
+ 		 <input type="password" id="password" name="password" required> <br> <br>
+ 		 <div style="text-align:center">
 		<button>Submit</button>
+		</div>
 	</form>
 </body>
 </html>
