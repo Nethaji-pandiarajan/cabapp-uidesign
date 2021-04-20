@@ -31,6 +31,9 @@ form {
 	margin-top: 10%;
 	width: 300px;
 }
+body{
+	background-color:  #fcb409;
+}
 
 input {
 	width: 100%;
@@ -41,17 +44,25 @@ input {
 	border-color: #008CBA;
 	border-bottom: 2px solid #008CBA;
 }
+h1 {
+	color: #008CBA;
+	text-align: center;
+}
 </style>
 </head>
 <body>
 	<form action="gst.html">
+			<h1>Bill Estimator</h1>
+		<label for="Username"> User name </label>
+		<input type="text" id="Username" name="Username" required autofocus> <br> <br>
 		<label for="cabs">Choose a Cab type:</label> <select name="cabs"
 			id="cabs">
 			<option value="micro">micro</option>
 			<option value="mini">mini</option>
 			<option value="prime">prime</option>
-		</select> <br> <br> <label for="km"> No of kilometers: </label> <input
-			type="number" id="km" name="km" required> <br> <br>
+		</select> <br> <br> 
+		<label for="km"> No of kilometers: </label>
+		<input type="number" id="km" name="km" required autofocus> <br> <br>
 		<div style="text-align: center">
 			<button>Submit</button>
 		</div>

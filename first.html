@@ -5,12 +5,16 @@
 <title>Cab App</title>
 </head>
 <style>
+body{
+	background-image: url("bg.jpg");
+}
 form {
 	border: 5px solid #008CBA;
 	padding: 10px;
 	margin: auto;
 	margin-top: 10%;
 	width: 350px;
+	background-color: #fcb409;
 }
 
 input {
@@ -29,7 +33,7 @@ button {
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	font-size: 16px;
+	font-size: 12px;
 	margin: 4px 2px;
 	transition-duration: 0.4s;
 	cursor: pointer;
@@ -49,16 +53,33 @@ h1 {
 }
 </style>
 <body>
-	<form action="cabtypes.html">
+	<form onsubmit="login()" >
 		<h1>Login</h1>
 		<br> 
 		<label for="mno"> Mobile Number: </label>
- 		<input type="text"	id="mno" name="mno" required> <br> <br>
+ 		<input type="text"	id="mno" name="mno" required autofocus> <br> <br>
  		 <label for="password"> Password: </label> 
- 		 <input type="password" id="password" name="password" required> <br> <br>
+ 		 <input type="password" id="password" name="password" required autofocus> <br> <br>
  		 <div style="text-align:center">
 		<button>Submit</button>
+		<p style="color:black">Hint: Username : 9751713840 & Password : Nethaji</p>
 		</div>
 	</form>
+</div>
+	<script>
+		function login(){
+			event.preventDefault();
+			let mobilenumber = document.querySelector('#mno').value;
+			let password = document.querySelector('#password').value;
+			if(mobilenumber == "9751713840" && password=="Nethaji")
+			{
+				alert("Successfully Logged in");
+				window.location.href="cabtypes.html";
+			}
+			else{
+				alert("Login failed..! Invalid User");
+			}
+		}
+	</script>
 </body>
 </html>
