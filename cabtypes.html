@@ -3,34 +3,40 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Cab Type</title>
+<link rel="stylesheet" href="sidebar.css">	
 <style>
 table, th, td {
-	border: 1px solid #008CBA;
+	border: 3px solid #008CBA;
 }
 
 table {
-	width: 30%;
+	width: 70%;
 	margin: auto;
 	background-color:  #fcb409;
 }
 
-div {
-	margin-top: 15%;
-}
 
-a{
+#nextstep{
 	text-align:center;	
 	}
 
 h1 {
 	text-align: center;
 }
-body{
-	background-color: #fcb600;
-}
+
 </style>
 </head>
 <body>
+	<div class="sidenav">
+		<a href="index.html" class="active" >HOME</a><br><br>
+		<a href="index.html">Login Page</a><br>
+    	<a href="cabtypes.html">Car Types</a><br>
+		<a href="BillEstimator.html">Bill Estimator</a><br>
+		<a href="Booking.html">Booking</a><br>
+		<a href="peakhours.html">Peak Hours</a><br>
+		<a href="seniorcitizen.html">Senior Citizen</a>
+	</div>
+	<form>
 	<div>
 		<h1>Cab Types</h1>
 
@@ -52,8 +58,8 @@ body{
 				<td>20 rs/km</td>
 			</tr>
 		</table>
-		<a href="BillEstimator.html"><h4>Proceed to next step 	&#8594</h4></a>
+		<a href="BillEstimator.html" id="nextstep"><h4>Proceed to next step 	&#8594</h4></a>
 	</div>
-
+</form>
 </body>
 </html>
