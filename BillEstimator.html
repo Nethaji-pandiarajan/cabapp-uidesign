@@ -24,7 +24,7 @@
 		<!--Age Function calling -->
 		<a href="" 	onclick="age()">Click to calculate your age</a><br>
 		<label for="age"> Age: </label>
-		<input type="number" id="age" name="age" readonly> <br> <br>
+		<input type="number" id="age" name="age" placeholder="PLEASE CALCULATE YOUR AGE" readonly> <br> <br>
 		<!-- Senior Citizen Check -->
 		<div class="checkbox">
 		<a href="" 	onclick="SeniorCitizenCheck()">Check Senior Citizen</a><br>
@@ -62,14 +62,11 @@
 		<a href="" 	onclick="CheckPeakHours()">Check Peak Hours</a><br>
 		<input type="checkbox" id="PeakHours" name="PeakHours" value="PeakHours">
 		<label for="PeakHours">Peak Hours</label><br><br>
-		
-		<div style="text-align: center">
-		<div style="text-align: center">
-				<button>Calculate</button>
-		</div>
 		<label for="price"> Total Bill: </label>
 		<input type="text" id="Amt" name="price" placeholder="CLICK CALCULATE TO GENERATE PRICE"> <br> <br>
-		
+		<div style="text-align: center">
+			<button onclick="last()">BOOK NOW</button>
+	</div>
 	</form>
 
 	<script>
@@ -182,6 +179,9 @@
 		document.getElementById("age").value = age;
 	}
 
+	function last(){
+		window.alert("Enjoy your Jouney..!!");
+	}
 	function SeniorCitizenCheck(){
 	//	event.preventDefault();
 		var dob=new Date(document.querySelector("#Bdate").value);
