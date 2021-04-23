@@ -11,68 +11,193 @@
 				<a href="index.html">Login Page</a><br>
 				<a href="cabtypes.html">Car Types</a><br>
 				<a href="BillEstimator.html">Bill Estimator</a><br>
-				<a href="Booking.html">Booking</a><br>
-				<a href="peakhours.html">Peak Hours</a><br>
-				<a href="seniorcitizen.html">Senior Citizen</a>
 	</div>
 
 	<form onclick="calc()">
-			<h1>Bill Estimator</h1>
+		<h1>Bill Estimator</h1>
+		<!--Input User Name -->
 		<label for="Username"> User name </label>
 		<input type="text" id="Username" name="Username" required autofocus> <br> <br>
+		<!--Input Date of Birth -->
 		<label for="Jdate">Enter your Date of Birth:</label>
 		<input type="date" id="Bdate" name="Bdate" required> <br><br>
+		<!--Age Function calling -->
+		<a href="" 	onclick="age()">Click to calculate your age</a><br>
+		<label for="age"> Age: </label>
+		<input type="number" id="age" name="age" readonly> <br> <br>
+		<!-- Senior Citizen Check -->
+		<div class="checkbox">
+		<a href="" 	onclick="SeniorCitizenCheck()">Check Senior Citizen</a><br>
+		<input type="checkbox" id="SeniorCitizen" name="SeniorCitizen" value="SeniorCitizen">
+		<label for="SeniorCitizen">SeniorCitizen</label><br><br>
+		</div>	
+		<!--Input Number of Kilometers -->
+		<label for="km"> No of kilometers: </label>
+		<input type="number" id="km" name="km" required autofocus> <br> <br>
+		<!--Input Type of cabs -->
 		<label for="cabs">Choose a Cab type:</label> <select name="cabs"
 			id="cabs">
 			<option value="micro">micro</option>
 			<option value="mini">mini</option>
 			<option value="prime">prime</option>
 		</select> <br> <br>
+		<!--Input Passengers -->
 		<label for="cabs">Passengers</label>:</label> <select name="cabs" id="cabs">
 			<option value="1">1</option>
 			<option value="2">2</option>
 			<option value="3">3</option>
 			<option value="4">4</option>
 		</select> <br><br>
-		<label for="km"> No of kilometers: </label>
-		<input type="number" id="km" name="km" required autofocus> <br> <br>
+		<!--Readonly Gst Percentage -->
 		<label for="gst"> Gst Percentage: </label>
 		<input type="text" value="7%" readonly> <br> <br>
+		<!-- Journey Date -->
 		<label for="Jdate">Journey Date:</label>
 		<input type="date" id="Jdate" name="Jdate"  min="2021-04-19" max="2021-04-26" required>
 		<br> <br>
+		<!--Input Pick Up time -->
 		<label for="time">Pick Up time:</label>
-        <input type="time" id="time" name="time" required><br><br>
+		<input type="time" id="time" name="time" required><br><br>
+
+		<a href="" 	onclick="CheckPeakHours()">Check Peak Hours</a><br>
+		<input type="checkbox" id="PeakHours" name="PeakHours" value="PeakHours">
+		<label for="PeakHours">Peak Hours</label><br><br>
+		
 		<div style="text-align: center">
 		<div style="text-align: center">
 				<button>Calculate</button>
 		</div>
 		<label for="price"> Total Bill: </label>
-		<input type="text" id="price" name="price"> <br> <br>
+		<input type="text" id="Amt" name="price" placeholder="CLICK CALCULATE TO GENERATE PRICE"> <br> <br>
 		
 	</form>
-	<div style="text-align: center">
-			<button onclick="next()">Next</button>
-	</div>
+
 	<script>
+		var age,h;
+		var Amt;
+
 		function calc(){
 		event.preventDefault();
 		let km=Number(document.getElementById("km").value);	
 		let cabs = document.getElementById("cabs").value;
 		switch(cabs){
-			case "micro":{let price=(((10*km)*0.07)+(10*km));document.getElementById("price").value =price;break;}
-			case "mini":{let price=(((15*km)*0.07)+(15*km));document.getElementById("price").value =price;break;}
-			case "prime":{let price=(((20*km)*0.07)+(20*km));document.getElementById("price").value =price;break;}
-		}	
+			case "micro":{
+					let Amt=(((10*km)*0.07)+(10*km));
+					if(CheckPeakHours()){
+						Amt=(1.25/100 *Amt)+Amt;
+						if( SeniorCitizenCheck()){
+							Amt = Amt/2;
+							document.getElementById("Amt").value = Amt;
+						}
+						else{
+							document.getElementById("Amt").value = Amt;
+						}	
+						}
+					else{
+						if(SeniorCitizenCheck()){
+							Amt = Amt/2;
+							document.getElementById("Amt").value = Amt;
+						}
+						else{
+							document.getElementById("Amt").value = Amt;
+						}
+					}
+					break;}
+			case "mini":{
+					let Amt=(((15*km)*0.07)+(15*km));	
+					if(CheckPeakHours()){
+						Amt=(1.25/100 *Amt)+Amt;
+						if( SeniorCitizenCheck()){
+							Amt = Amt/2;
+							document.getElementById("Amt").value = Amt;
+						}
+						else{
+							document.getElementById("Amt").value = Amt;
+						}	
+						}
+					else{
+						if(SeniorCitizenCheck()){
+							Amt = Amt/2;
+							document.getElementById("Amt").value = Amt;
+						}
+						else{
+							document.getElementById("Amt").value = Amt;
+						}
+					}
+					break;}
+			case "prime":{
+				let Amt=(((20*km)*0.07)+(20*km));
+				if(CheckPeakHours()){
+						Amt=(1.25/100 *Amt)+Amt;
+						if( SeniorCitizenCheck()){
+							Amt = Amt/2;
+							document.getElementById("Amt").value = Amt;
+						}
+						else{
+							document.getElementById("Amt").value = Amt;
+						}	
+						}
+					else{
+						if(SeniorCitizenCheck()){
+							Amt = Amt/2;
+							document.getElementById("Amt").value = Amt;
+						}
+						else{
+							document.getElementById("Amt").value = Amt;
+						}
+					}
+					break;
+			}
+		}
+
 	}
 
-	function next(){
-		window.location.href="Booking.html";
+//	function next(){
+	//	window.location.href="Booking.html";
+//	}
+
+	function CheckPeakHours(){
+	//	event.preventDefault();
+		var time = document.getElementById("time").value;
+		h = parseInt(time);
+		if( h >=17 && h< 19){
+		//	alert("During  17:00 to 19:00.It is a peak hours.");
+		//	alert("So You have to pay 1.25% on your Bill")
+			document.getElementById("PeakHours").checked = true;
+			return true;
+		}
+		else{
+			document.getElementById("PeakHours").checked = false;
+			return false;
+		}
 	}
 
-	function PeakHours(){
+	function age(){
 		event.preventDefault();
-		let 
+		var dob=new Date(document.querySelector("#Bdate").value);
+		var Year = dob.getFullYear();
+		var CurrentDate = new Date();
+		var CurrentYear = CurrentDate.getFullYear();
+		var age = CurrentYear - Year;
+		document.getElementById("age").value = age;
+	}
+
+	function SeniorCitizenCheck(){
+	//	event.preventDefault();
+		var dob=new Date(document.querySelector("#Bdate").value);
+		var Year = dob.getFullYear();
+		var CurrentDate = new Date();
+		var CurrentYear = CurrentDate.getFullYear();
+		var age = CurrentYear - Year;
+		if(age >= 60){
+		document.getElementById("SeniorCitizen").checked = true;
+	//	alert("You are a Senior Citizen. 50% Discounts for You.");
+		return true;	
+		}
+		else{
+		document.getElementById("SeniorCitizen").checked = false;
+		return false	
+		}
 	}
 	</script>
 
